@@ -58,6 +58,9 @@ class InvoiceController extends Controller
         }
 
         $validated = $request->validate([
+            'issuer_name' => 'nullable|string|max:255',
+            'issuer_address' => 'nullable|string',
+            'issuer_tax_id' => 'nullable|string|max:255',
             'client_name' => 'required|string|max:255',
             'client_address' => 'nullable|string',
             'invoice_number' => 'required|string|unique:invoices,invoice_number',

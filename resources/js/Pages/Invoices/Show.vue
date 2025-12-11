@@ -66,17 +66,17 @@ const canDelete = computed(() => {
                         <!-- Header Section -->
                         <div class="flex justify-between items-start mb-12">
                             <div class="flex gap-4">
-                                <div class="w-16 h-16 bg-[#B45309] rounded-full flex items-center justify-center text-white text-3xl font-bold">
+                                <!-- <div class="w-16 h-16 bg-[#B45309] rounded-full flex items-center justify-center text-white text-3xl font-bold">
                                     Z
-                                </div>
+                                </div> -->
                                 <div>
-                                    <h1 class="text-[#B45309] font-bold text-xl">Zylker Design Labs</h1>
+                                    <!-- <h1 class="text-[#B45309] font-bold text-xl">Zylker Design Labs</h1>
                                     <div class="text-gray-500 text-sm mt-1">
                                         14B, Northern Street<br>
                                         Greater South Avenue<br>
                                         New York 10001<br>
                                         U.S.A
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                             <div class="text-right">

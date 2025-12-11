@@ -8,6 +8,9 @@ const props = defineProps({
 });
 
 const form = useForm({
+    issuer_name: '',
+    issuer_address: '',
+    issuer_tax_id: '',
     client_name: '',
     client_address: '',
     invoice_number: props.nextInvoiceNumber || '',
@@ -51,6 +54,25 @@ const submit = () => {
             <div class="max-w-4xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg p-8">
                     <form @submit.prevent="submit" class="space-y-6">
+                        <!-- Issuer Info -->
+                        <div class="border-b border-gray-200 dark:border-gray-700 pb-6 mb-6">
+                            <h3 class="text-lg font-medium text-gray-900 dark:text-white mb-4">Issuer Info</h3>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Issuer Name</label>
+                                    <input v-model="form.issuer_name" type="text" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white" />
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Tax ID / CNPJ</label>
+                                    <input v-model="form.issuer_tax_id" type="text" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white" />
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Issuer Address</label>
+                                <textarea v-model="form.issuer_address" rows="3" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"></textarea>
+                            </div>
+                        </div>
+
                         <!-- Client Info -->
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>

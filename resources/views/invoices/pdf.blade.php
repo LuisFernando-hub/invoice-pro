@@ -54,12 +54,19 @@
     <!-- Header -->
     <table class="header-table">
         <tr>
-            <td class="logo-cell">
+            {{-- <td class="logo-cell">
                 <div class="logo">Z</div>
-            </td>
+            </td> --}}
             <td class="company-info-cell">
-                <div class="company-name">Zylker Design Labs</div>
-                <div>14B, Northern Street<br>Greater South Avenue<br>New York 10001<br>U.S.A</div>
+                @if($invoice->issuer_name)
+                    <div class="company-name">{{ $invoice->issuer_name }}</div>
+                @endif
+                @if($invoice->issuer_address)
+                    <div>{!! nl2br(e($invoice->issuer_address)) !!}</div>
+                @endif
+                @if($invoice->issuer_tax_id)
+                    <div>Tax ID/CNPJ: {{ $invoice->issuer_tax_id }}</div>
+                @endif
             </td>
             <td class="invoice-details-cell">
                 <div class="invoice-title">INVOICE</div>
